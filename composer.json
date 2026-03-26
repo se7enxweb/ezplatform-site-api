@@ -46,8 +46,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.4-dev",
-            "dev-4.3-se7enx": "4.3.x-dev"
+            "dev-master": "4.4-dev"
         }
     },
     "scripts": {
