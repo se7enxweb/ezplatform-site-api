@@ -29,6 +29,9 @@
     "suggest": {
         "netgen/tagsbundle": "Allows using Tag relation Query Types and named Tag objects"
     },
+    "replace": {
+        "netgen/ezplatform-site-api": "self.version"
+    },
     "autoload": {
         "psr-4": {
             "Netgen\\EzPlatformSiteApi\\": "lib",
