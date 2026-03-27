@@ -104,9 +104,9 @@ final class GetAttrExpressionDecorator extends GetAttrExpression
         return $this->decoratedExpression->hasAttribute($name);
     }
 
-    public function getAttribute(string $name)
+    public function getAttribute($name, $default = null)
     {
-        return $this->decoratedExpression->getAttribute($name);
+        return $this->decoratedExpression->getAttribute($name, $default);
     }
 
     public function setAttribute(string $name, $value): void
