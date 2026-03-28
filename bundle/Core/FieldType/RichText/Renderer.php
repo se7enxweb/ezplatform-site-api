@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Netgen\Bundle\EzPlatformSiteApiBundle\Core\FieldType\RichText;
 
+use eZ\Publish\API\Repository\PermissionResolver;
 use eZ\Publish\API\Repository\Repository;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use EzSystems\EzPlatformRichTextBundle\eZ\RichText\Renderer as CoreRenderer;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Twig\Environment;
 
 class Renderer extends CoreRenderer
@@ -17,9 +17,9 @@ class Renderer extends CoreRenderer
 
     public function __construct(
         Repository $repository,
-        AuthorizationCheckerInterface $authorizationChecker,
         ConfigResolverInterface $configResolver,
         Environment $twig,
+        PermissionResolver $permissionResolver,
         $tagConfigurationNamespace,
         $styleConfigurationNamespace,
         $embedConfigurationNamespace,
@@ -30,9 +30,9 @@ class Renderer extends CoreRenderer
     ) {
         parent::__construct(
             $repository,
-            $authorizationChecker,
             $configResolver,
             $twig,
+            $permissionResolver,
             $tagConfigurationNamespace,
             $styleConfigurationNamespace,
             $embedConfigurationNamespace,

@@ -8,12 +8,12 @@ use Netgen\EzPlatformSiteApi\Core\Site\Values\Fields;
 use Traversable;
 use Twig\Compiler;
 use Twig\Environment;
+use Twig\Extension\CoreExtension;
 use Twig\Extension\SandboxExtension;
 use Twig\Node\Expression\GetAttrExpression;
 use Twig\Node\Node;
 use Twig\Source;
 use Twig\Template;
-use function twig_get_attribute;
 
 final class GetAttrExpressionDecorator extends GetAttrExpression
 {
@@ -199,7 +199,7 @@ final class GetAttrExpressionDecorator extends GetAttrExpression
         $lineno = -1
     ) {
         if (!$object instanceof Fields) {
-            return twig_get_attribute(
+            return CoreExtension::getAttribute(
                 $env,
                 $source,
                 $object,
